@@ -1,0 +1,48 @@
+﻿@model BloodBank.Models.Patient
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form action="@Url.Action("Edit", "Patient")" method="post">
+    @*add a hidden field to hold the contact form id*@ 
+    <br />
+    
+        @Html.HiddenFor(x => x.PatientID)
+    
+
+    <div>
+        @*create table then text box for 
+    then validation for each property
+    what to display*@
+        @Html.LabelFor(x => x.Name)
+        @Html.TextBoxFor(x => x.Name)
+        @Html.ValidationMessageFor(x => x.Name)
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.BloodGroup)
+        @Html.TextBoxFor(x => x.BloodGroup)
+        @Html.ValidationMessageFor(x => x.BloodGroup)
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.Disease)
+        @Html.TextAreaFor(x => x.Disease)
+        @Html.ValidationMessageFor(x => x.Disease)
+    </div>
+
+    <input type="submit" value="Submit" />
+    @*Value is what actually displayed to the web page*@
+
+</form>
+
+@*Add reference to JQuery validation
+this is the javascript that actually
+performs our validation using jquery*@
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    }

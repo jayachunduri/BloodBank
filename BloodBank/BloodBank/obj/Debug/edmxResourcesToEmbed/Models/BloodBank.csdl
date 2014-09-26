@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StoredProcPracticeModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="StoredProcPracticeEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Donors" EntityType="StoredProcPracticeModel.Donor" />
+    <EntitySet Name="Patients" EntityType="StoredProcPracticeModel.Patient" />
+  </EntityContainer>
+  <EntityType Name="Donor">
+    <Key>
+      <PropertyRef Name="DonorID" />
+    </Key>
+    <Property Name="DonorID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="BloodGroup" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="MedicalReport" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DonorAddress" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ContactNo" Type="String" MaxLength="12" Unicode="false" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="PatientID" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="BloodGroup" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="Disease" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>

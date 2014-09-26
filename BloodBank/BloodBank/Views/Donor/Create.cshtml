@@ -1,0 +1,64 @@
+﻿
+
+@{
+    ViewBag.Title = "Create New Donor";
+}
+
+<h2>Create New Donor</h2>
+
+<form action="@Url.Action("Create", "Donor")" method="post">
+    @*add a hidden field to hold the contact form id*@ 
+    <br />
+      @Html.Hidden("ID")
+        <div>
+        @*create table then text box for each column
+        then validation for each property
+        what to display*@
+        @Html.Label("Name")
+        @Html.TextBox("Name")
+        
+            </div>
+
+        <div>
+           @Html.Label("Blood Group")
+        @Html.TextBox("Blood Group")
+        </div>
+
+    <div>
+           @Html.Label("Medical Report")
+        @Html.TextBox("Medical Report")
+        </div>
+
+    <div>
+           @Html.Label("Address");
+        @Html.TextBox("Address");
+        </div>
+
+    <div>
+           @Html.Label("Contact No");
+        @Html.TextBox("Contact No");
+        </div>
+
+	
+    
+       
+
+    
+
+    
+    
+
+    <input type="submit" value="Submit" />
+    @*Value is what actually displayed to the web page*@
+
+</form>
+
+@*Add reference to JQuery validation
+this is the javascript that actually
+performs our validation using jquery*@
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    }
+
+

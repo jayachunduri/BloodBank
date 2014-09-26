@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<!doctype html>
+<html>
+    <head>
+        <title>Blood Bank</title>
+        <style>
+            a {
+            color: blue;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        nav {
+            text-align:center;
+        }
+        h2 {
+            text-align:center;
+        }
+        h1 {
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Home</h1>
+        
+    <a href="@Url.Action("Index","Donor")">
+        <h2>Donors</h2>
+    </a>
+        <br />
+        <a href="@Url.Action("Index","Patient")">
+        <h2>Patients</h2>
+    </a>
+
+    </nav>
+
+    </body>
+</html>
+
